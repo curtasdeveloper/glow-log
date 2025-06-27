@@ -1,10 +1,12 @@
 import './index.css'
-
+import Header from './Header.jsx'
+import HomeMainContent from './HomeMainContent.jsx'
 function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <Header />
+      <HomeMainContent />
     </>
   )
 }
