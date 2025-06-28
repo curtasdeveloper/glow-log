@@ -20,12 +20,12 @@ function Suggestion() {
         <>
             <div className='flex items-center justify-center h-[100vh] bg-zinc-200 '>
                 <main className='h-[80%] w-[50%] flex flex-col items-start justify-between bg-zinc-300 px-[2em] py-[3em] rounded-lg shadow-xl'>
-                    <header>
+                    <header className='border-b-1 border-zinc-400 pb-[16px]'>
                         <h1 className='inconsolata text-2xl font-semibold text-zinc-900'>Help Me Improve</h1>
                         <p className='text-md text-zinc-800 inconsolata'>Have an idea for a new feature or improvement? I'd love to hear from you! Your feedback will helps me build a better experience for everyone.</p>
                     </header>
                     <SuggestionForm />
-                    <footer className='flex justify-center w-[100%]'>
+                    <footer className='flex justify-center w-[100%] border-t-1 border-zinc-400 pt-[16px]'>
                         <p className='text-center text-sm text-zinc-800 inconsolata'>We review all suggestions and appreciate your time in helping us improve our platform.</p>
                     </footer>
                 </main> 
