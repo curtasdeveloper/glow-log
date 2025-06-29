@@ -3,9 +3,11 @@ import MainHeader from './MainHeader.jsx'
 import HomeMainContent from './HomeMainContent.jsx'
 import About from './About.jsx'
 import Features from './Features.jsx'
-import Demo from './Demo.jsx'
 import Suggestion from './Suggestion.jsx'
 import MainFooter from './MainFooter.jsx'
+import ProfileForm from './ProfileForm.jsx'
+
+
 function App() {
 
   return (
@@ -14,9 +16,9 @@ function App() {
       <HomeMainContent />
       <About />
       <Features />
-      <Demo />
       <Suggestion />
       <MainFooter />
+      <ProfileForm />
     </>
   )
 }

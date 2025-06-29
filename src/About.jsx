@@ -2,7 +2,7 @@ import './index.css'
 function About() {
     return (
         <>
-            <header className='h-[20vh]'></header>
+            <header className='h-[20vh]' id='about-section'></header>
             <div className='h-[80vh] grid grid-cols-2 grid-rows-4'>
                 <div className=""></div>
                 <div className="">
