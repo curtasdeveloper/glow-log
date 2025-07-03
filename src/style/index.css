@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+    --color-background-primary: #1a1b1e;
+    --color-background-secondary: #222327;
+    --color-background-black: #1a1b1e;
+    --color-foreground-white: #f0f0f0;
+    --color-primary-purple: #8c5cff;
+    --font-title: "Plus Jakarta Sans", sans-serif;
+    --font-heading: "Plus Jakarta Sans", sans-serif;
+    --font-paragraph: "Plus Jakarta Sans", sans-serif;
+    --breakpoint-3xl: 120rem;
+    --breakpoint-4xl: 140rem;
+
+}
