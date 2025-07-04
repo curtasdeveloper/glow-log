@@ -15,10 +15,10 @@ function List({icon, text}) {
 function AboutSection() {
     return (
         <>
-            <div id='about-container'
+            <div 
                 className='bg-background-black text-foreground-white flex flex-col gap-12 py-5'
             >
-                <header className='flex flex-col gap-4 items-center'>
+                <header id='about-container' className='flex flex-col gap-4 items-center'>
                     <h1 className='text-4xl font-title font-semibold text-center'>About <span className='text-primary-purple'>TrackPeak</span></h1>
                     <p className='text-lg font-heading opacity-70 text-center lg:w-1/2 sm:px-4'>
                         Built for those who strive for better, TrackPeak combines fitness and tech to help you track smarter, stay consistent, and reach your peak.

@@ -23,7 +23,7 @@ function Header() {
                 <nav id='navigation-container' className='hidden lg:block '>
                     <ul className='flex lg:gap-6 xl:gap-8'>
                         <li className='text-foreground-white font-heading'><a href="#about-container">About</a></li>
-                        <li className='text-foreground-white font-heading'><a href="#">Features</a></li>
+                        <li className='text-foreground-white font-heading'><a href="#features-container">Features</a></li>
                     </ul>
                 </nav>
                 <div id='hamburger-container' className='block lg:hidden'>
@@ -35,10 +35,10 @@ function Header() {
                 <nav className='z-20 p-6 bg-background-secondary h-[100vh] w-9/10 md:max-lg:w-1/2 lg:hidden fixed top-0 right-0'>
                     <ul className='flex flex-col gap-2 items-center'>
                         <li className='text-foreground-white font-heading text-xl'>
-                            <a href="#">About</a>
+                            <a href="#about-container">About</a>
                         </li>
                         <li className='text-foreground-white font-heading text-xl'>
-                            <a href="#">Features</a>
+                            <a href="#features-container">Features</a>
                         </li>
                         <li onClick={handleSideBarVisibility} className='text-foreground-white font-heading underline underline-offset-4 cursor-pointer font-light text-lg'>Close</li>
                     </ul>

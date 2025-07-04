@@ -1,5 +1,5 @@
 import '../../style/index.css'
-import { AiTwotoneSetting } from "react-icons/ai";
+import { PiCalculatorThin } from "react-icons/pi";
 import { CiPen } from "react-icons/ci";
 import { PiTimerBold } from "react-icons/pi";
 import { GiForkKnifeSpoon } from "react-icons/gi";
@@ -7,10 +7,11 @@ import { IoNutrition } from "react-icons/io5";
 import FeatureCard from '../reusable-component/card/FeatureCard';
 import FutureFeatureCard from '../reusable-component/card/FutureFeatureCard';
 
+
 function Features() {
     const cardCoreFeaturesContent = [
         {
-            icon: <AiTwotoneSetting className='size-10 text-primary-purple'/>,
+            icon: <PiCalculatorThin className='size-10 text-primary-purple'/>,
             heading: "Fitness Tools",
             text: "BMI calculator, calorie generator, and other essential fitness calculation tools to optimize your health metrics."
         },
@@ -39,8 +40,8 @@ function Features() {
     ]
     return(
         <>
-            <div id="features-container" className='bg-background-black py-4'>
-                <div className='bg-background-black text-foreground-white py-5'>
+            <div className='bg-background-black py-4'>
+                <div id="features-container" className='bg-background-black text-foreground-white py-5'>
                     <header className='flex flex-col gap-4 items-center'>
                         <h1 className='text-3xl font-title font-semibold text-center'>Tools that will Fuel your <span className='text-primary-purple'>Peak</span></h1>
                         <p className='text-lg font-heading opacity-70 text-center lg:w-1/2 sm:px-4'>
