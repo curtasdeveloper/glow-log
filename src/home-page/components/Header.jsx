@@ -32,7 +32,7 @@ function Header() {
             </header>
 
             <aside id='sidebar-container' className={`${isVisible ? 'block' : 'hidden'} ` + 'lg:hidden'}>
-                <nav className='z-20 p-6 bg-background-secondary h-[100vh] w-9/10 md:max-lg:w-1/2 lg:hidden fixed top-0 right-0'>
+                <nav className='z-20 p-6 bg-background-secondary h-[100vh] w-9/10 md:max-lg:w-1/2 lg:hidden fixed top-0 right-0 flex items-center justify-center'>
                     <ul className='flex flex-col gap-2 items-center'>
                         <li className='text-foreground-white font-heading text-xl'>
                             <a href="#about-container">About</a>

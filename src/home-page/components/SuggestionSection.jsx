@@ -31,7 +31,7 @@ function SuggestionSection() {
                         <textarea placeholder='I would like to suggest a new feature...' className='h-18 p-2 rounded-xl shadow-sm bg-background-secondary font-title outline outline-background-tertiary focus:outline-background-purple-lining' type="text" name="suggestion" id="suggestion" />
                     </div>
 
-                    <button type="submit" className='flex items-center justify-center gap-1 rounded-md h-10 w-1/2 md:w-3/4 bg-background-tertiary font-title hover:bg-primary-purple duration-150'>
+                    <button type="submit" className='px-2 flex items-center justify-center gap-1 rounded-md h-10 w-1/2 md:w-3/4 bg-background-tertiary font-title hover:bg-primary-purple duration-150'>
                         <BsSendCheck className='text-foreground-white'/>
                         <span>Submit Suggestion</span>
                     </button>       

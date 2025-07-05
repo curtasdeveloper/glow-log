@@ -1,6 +1,5 @@
 import '../../style/index.css'
-import PurpleButton from '../reusable-component/button/PurpleButton'
-
+import AccountForm from '../components/AccountForm'
 function HomeSection() {
     return (
         <>
@@ -18,7 +17,7 @@ function HomeSection() {
                     </p>
                 </div>
                 <div className="button-container flex justify-center">
-                    <PurpleButton text="Get Started."/>
+                    <AccountForm text="Get Started."/>
                 </div>
             </main>
         </>

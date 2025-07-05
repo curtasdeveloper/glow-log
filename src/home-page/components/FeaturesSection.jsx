@@ -11,16 +11,19 @@ import FutureFeatureCard from '../reusable-component/card/FutureFeatureCard';
 function Features() {
     const cardCoreFeaturesContent = [
         {
+            featureNumber: 1,
             icon: <PiCalculatorThin className='size-10 text-primary-purple'/>,
             heading: "Fitness Tools",
             text: "BMI calculator, calorie generator, and other essential fitness calculation tools to optimize your health metrics."
         },
         {
+            featureNumber: 2,
             icon: <CiPen className='size-10 text-primary-purple'/>,
             heading: "Journey Tracker",
             text: "BMI calculator, calorie generator, and other essential fitness calculation tools to optimize your health metrics."
         },
         {
+            featureNumber: 3,
             icon: <PiTimerBold className='size-10 text-primary-purple'/>,
             heading: "Session Handlers",
             text: "BMI calculator, calorie generator, and other essential fitness calculation tools to optimize your health metrics."
@@ -28,11 +31,13 @@ function Features() {
     ]
     const cardNewGainsIncomingContent = [
         {
+            featureNumber: 1,
             icon: <GiForkKnifeSpoon className='size-10 text-foreground-white'/>,
             heading: "Diet Planner",
             text: "Comprehensive meal planning and nutrition tracking to complement your fitness routine."
         },
         {
+            featureNumber: 2,
             icon: <IoNutrition className='size-10 text-foreground-white'/>,
             heading: "Food Suggester",
             text: "AI-powered food recommendations based on your fitness goals and dietary preferences."
@@ -51,8 +56,8 @@ function Features() {
                 </div>
                 <h1 className='text-primary-purple font-bold text-2xl text-center my-4'>Core Features</h1>
                 <div className='flex flex-col gap-3 px-2 lg:flex-row lg:gap-6 lg:px-6 items-center'>
-                    {cardCoreFeaturesContent.map(({icon, heading, text}) => {
-                        return <FeatureCard icon={icon} heading={heading} text={text}/>
+                    {cardCoreFeaturesContent.map(({featureNumber, icon, heading, text}) => {
+                        return <FeatureCard key={featureNumber} icon={icon} heading={heading} text={text}/>
                     })}
                 </div>
                 <div className='flex justify-center item-center'>
@@ -60,8 +65,8 @@ function Features() {
                 </div>
                 <h1 className='text-primary-purple font-bold text-2xl text-center my-4'>New Gains Incoming</h1>
                 <div className='flex flex-col gap-3 px-2 lg:flex-row lg:gap-6 lg:px-6 items-center lg:justify-center'>
-                    {cardNewGainsIncomingContent.map(({icon, heading, text}) => {
-                        return <FutureFeatureCard icon={icon} heading={heading} text={text}/>
+                    {cardNewGainsIncomingContent.map(({featureNumber, icon, heading, text}) => {
+                        return <FutureFeatureCard key={featureNumber} icon={icon} heading={heading} text={text}/>
                     })}
                 </div>
             </div>
