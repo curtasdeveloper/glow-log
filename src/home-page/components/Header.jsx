@@ -35,10 +35,10 @@ function Header() {
                 <nav className='z-20 p-6 bg-background-secondary h-[100vh] w-9/10 md:max-lg:w-1/2 lg:hidden fixed top-0 right-0 flex items-center justify-center'>
                     <ul className='flex flex-col gap-2 items-center'>
                         <li className='text-foreground-white font-heading text-xl'>
-                            <a href="#about-container">About</a>
+                            <a href="#about-container" onClick={handleSideBarVisibility}>About</a>
                         </li>
                         <li className='text-foreground-white font-heading text-xl'>
-                            <a href="#features-container">Features</a>
+                            <a href="#features-container" onClick={handleSideBarVisibility}>Features</a>
                         </li>
                         <li onClick={handleSideBarVisibility} className='text-foreground-white font-heading underline underline-offset-4 cursor-pointer font-light text-lg'>Close</li>
                     </ul>
