@@ -51,17 +51,17 @@ function LoginForm() {
                             className='font-title sm:text-[12px] md:text-sm'
                             >Remember Me</label>
                         </div>
-                        <button className='font-title sm:text-[12px] md:text-sm' type='button'>Forgot Password?</button>
+                        <button className='font-title sm:text-[12px] md:text-sm hover:underline' type='button'>Forgot Password?</button>
                     </div>
                     <div className='flex justify-center'>
-                        <button className='font-title text-md px-6 py-1 rounded-sm bg-background-secondary' type="submit">Log In</button>
+                        <button className='font-title text-md px-6 py-1 rounded-sm bg-background-secondary duration-100 hover:scale-95 active:scale-90' type="submit">Log In</button>
                     </div>
                     <br />
                     <hr className='opacity-45 w-3/4 m-auto'/>
                 </form>
                 <footer className='flex items-center justify-center gap-1'>
-                    <p className='font-title text-sm opacity-80'>Don't Have An Account?</p>
-                    <button className='font-title text-sm opacity-80' type='button'>Register Now.</button>
+                    <p className='font-title text-sm opacity-70'>Don't Have An Account?</p>
+                    <button className='font-title text-sm hover:underline' type='button'>Register Now.</button>
                 </footer>
             </div>
         </>
