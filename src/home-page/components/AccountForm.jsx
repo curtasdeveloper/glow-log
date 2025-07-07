@@ -2,50 +2,68 @@ import '../../style/index.css'
 import { useState } from 'react'
 import PurpleButton from '../reusable-component/button/PurpleButton'
 import { PiHandshakeThin } from "react-icons/pi";
+import { PiHandWavingThin } from "react-icons/pi";
+import { PiLockKeyThin } from "react-icons/pi";
+import { PiEyeThin } from "react-icons/pi";
+import { PiEyeSlashThin } from "react-icons/pi";
 
 function LoginForm() {
+    const [ showPassword, setShowPassword ] = useState(false)
+    const handleShowPasswordBtn = () => {
+        const newShowPassword = !showPassword;
+        setShowPassword(newShowPassword)
+    }
     return (
         <>
-            <section className='text-foreground-white w-full h-full flex flex-col item-center justify-center'>
-                <header className='h-1/3 2xs:h-3/10 flex flex-col item-center justify-end pb-7'>
-                    <div className='flex justify-center'>
-                        <PiHandshakeThin className='size-12 2xs:size-10 sm:size-12' />
-                    </div>
-                    <h1 className='text-center font-title text-2xl font-extrabold 2xs:text-xl sm:text-2xl'>Welcome Back to Peak Mode</h1>
-                    <p className='text-center font-heading text-md opacity-95 2xs:text-sm sm:text-lg'>Log in to access your personalized dashboard and continue your journey with tracked sets, sessions, and insights—all ready and waiting.</p>
+            <div id='infos-container' className='text-foreground-white flex flex-col items-center justify-center sm:rounded-l-lg rounded-t-lg bg-background-purple-lining sm:bg-background-secondary w-full h-1/3 sm:w-1/2 sm:h-full'>
+                <PiHandshakeThin className='size-8 sm:size-10 md:size-11 lg:size-12'/>
+                <h1 className='text-center font-bold font-title lg:text-xl'>Welcome Back to Peak Mode</h1>
+                <p className='text-center font-light font-heading text-sm w-3/4 2xs:max-xs:w-full sm:w-4/5'>Log in to access your personalized dashboard and continue your journey with tracked sets, sessions, and insights—all ready and waiting.</p>
+            </div>
+            <div id='inputs-container' className='flex flex-col items-center justify-center gap-2 text-foreground-white bg-background-purple-lining rounded-b-lg sm:rounded-lg w-full h-2/3 sm:w-1/2 sm:h-full'>
+                <header className='hidden sm:block md:pt-10'>
+                    <h1 className='font-heading text-xl lg:text-2xl font-semibold text-center opacity-75'>Time to Train Smarter</h1>
                 </header>
-                <hr className='w-full opacity-20 border border-foreground-white mx-auto mb-3 2xs:mb-[-22px] sm:mb-[-80px]' />
-                <form action=""
-                    className='flex flex-col items-center justify-center h-1/2 2xs:h-7/10'>
-                    <div className='flex flex-col gap-1 w-full mb-3'>
-                        <label className='font-title text-md ' htmlFor="login-email">Email</label>
-                        <input required placeholder='johndoe@example.com' className='p-2 font-title rounded-md shadow-sm bg-background-secondary outline outline-background-tertiary focus:outline-background-purple-lining' type="login-email" name="login-email" id="login-email" />
+                <form action="" className='w-full px-4 md:px-6 flex flex-col gap-2'>
+                    <hr className='opacity-45 w-3/4 m-auto'/>
+                    <br />
+                    <div id="login-email-container" className='flex flex-col'>
+                        <label htmlFor="login-email"
+                            className='font-title text-md'
+                            >Email</label>
+                        <input required type="email" name="login-email" id="login-email" placeholder='johndoe@example.com'
+                            className='bg-background-secondary p-2 rounded-md font-title text-sm outline-none font-thin'/>
                     </div>
-                    <div className='flex flex-col gap-1 w-full mb-1'>
-                        <label className='font-title text-md ' htmlFor="login-password">Password</label>
-                        <input required placeholder='xxxxxxxx' className='p-2 font-title rounded-md shadow-sm bg-background-secondary outline outline-background-tertiary focus:outline-background-purple-lining' type="login-password" name="login-password" id="login-password" />
-                    </div>
-                    <div className='flex items-center justify-between w-full mb-3'>
-                        <div className='flex gap-1 items-center'>
-                            <input type="checkbox" name="remember-me" id="remember-me" />
-                            <label className='font-title text-md 2xs:text-sm' htmlFor="remember-me">Remember Me</label>
+                    <div id="login-password-container" className='flex flex-col'>
+                        <label htmlFor="login-password"
+                            className='font-title text-md'
+                            >Password</label>
+                        <div className='flex relative'>
+                            <input required type={showPassword ? "text": "password"} name="login-password" id="login-password" placeholder='xxxxxxxx'
+                                className='bg-background-secondary p-2 rounded-md font-title text-sm outline-none w-full font-thin'/>
+                            <button onClick={handleShowPasswordBtn} className='absolute top-3 right-2 outline-none' type="button">{showPassword ? <PiEyeThin /> : <PiEyeSlashThin />}</button>
                         </div>
-                        <button type="button" className='font-title duration-150 2xs:text-sm'>
-                            <span>Forgot Your Password?</span>
-                        </button> 
                     </div>
-                    <button type="submit" className='mb-5 px-2 2xs:py-2 flex items-center justify-center gap-1 rounded-md h-10 w-1/2 md:w-3/4 bg-background-tertiary font-title hover:bg-primary-purple duration-150'>
-                        <span>Log in</span>
-                    </button>  
-                    <hr className='w-3/4 opacity-20 border border-foreground-white mx-auto mb-8' />
-                    <footer className='flex items-center justify-center gap-2'>
-                        <p className='font-title text-md opacity-75'>Don't Have An Account?</p>
-                        <button type="button" className='font-title duration-150'>
-                            <span>Register now.</span>
-                        </button> 
-                    </footer>
+                    <div id="rememberMe-and-forgotPassword-container" className='flex items-center justify-between'>
+                        <div id='remember-me-container' className='flex items-center gap-1'>
+                            <input type="checkbox" name="remember-me" id="remember-me"/>
+                            <label htmlFor="remember-me"
+                            className='font-title sm:text-[12px] md:text-sm'
+                            >Remember Me</label>
+                        </div>
+                        <button className='font-title sm:text-[12px] md:text-sm' type='button'>Forgot Password?</button>
+                    </div>
+                    <div className='flex justify-center'>
+                        <button className='font-title text-md px-6 py-1 rounded-sm bg-background-secondary' type="submit">Log In</button>
+                    </div>
+                    <br />
+                    <hr className='opacity-45 w-3/4 m-auto'/>
                 </form>
-            </section>
+                <footer className='flex items-center justify-center gap-1'>
+                    <p className='font-title text-sm opacity-80'>Don't Have An Account?</p>
+                    <button className='font-title text-sm opacity-80' type='button'>Register Now.</button>
+                </footer>
+            </div>
         </>
     ) 
 }
@@ -53,39 +71,50 @@ function LoginForm() {
 function SignupForm() {
     return (
         <>
+            <div id='infos-container' className='text-foreground-white flex flex-col items-center justify-center sm:rounded-l-lg rounded-t-lg bg-background-purple-lining sm:bg-background-secondary w-full h-1/3 sm:w-1/2 sm:h-full'>
+                <PiHandWavingThin className='size-8 sm:size-9 lg:size-10'/>
+                <h1 className='2xs:max-xs:text-[16px] text-center font-bold font-title lg:text-xl'>Start Your Fitness Journey with TrackPeak</h1>
+                <p className='text-center 2xs:max-xs:text-[12px] font-light font-heading text-sm w-3/4 2xs:max-xs:w-full sm:w-4/5'>Join TrackPeak for smarter tracking and stronger results with tools that keep you consistent, focused, and climbing toward your peak.</p>
+            </div>
+            <div id='inputs-container' className='bg-background-purple-lining rounded-b-lg sm:rounded-lg w-full h-2/3 sm:w-1/2 sm:h-full'></div>
+        </>
+    )
+}
+
+function ForgotPasswordForm() {
+    return (
+        <>
+            <div id='infos-container' className='text-foreground-white flex flex-col items-center justify-center sm:rounded-l-lg rounded-t-lg bg-background-purple-lining sm:bg-background-secondary w-full h-1/3 sm:w-1/2 sm:h-full'>
+                <PiLockKeyThin className='size-8 sm:size-9 lg:size-10'/>
+                <h1 className='text-center font-bold font-title lg:text-xl'>Reset and Restart Strong</h1>
+                <p className='text-center font-light font-heading text-sm w-3/4 2xs:max-xs:w-full sm:w-4/5'>Because missing a password shouldn’t stop your progress.</p>
+            </div>
+            <div id='inputs-container' className='bg-background-purple-lining rounded-b-lg sm:rounded-lg w-full h-2/3 sm:w-1/2 sm:h-full'></div>
         </>
     )
 }
 
 function AccountForm({text}) {
+
     const [ accountFormIsVisible, setAccountFormIsVisible ] = useState(false)
-    const [ noAccountYet, setNoAccountYet ] = useState(false)
-    const [ didForgotPassword, setDidForgotPassword ] = useState(false)
-    
+    const [ currentForm, setCurrentForm ] = useState(<LoginForm />)
     // const [ haveNoAccount, setAccountFormIsVisiblesetHaveNoAccount ] = useState(false)
     const handleClick = () => {
         const newIsVisible = !accountFormIsVisible
         setAccountFormIsVisible(newIsVisible)
         console.log("Should be visible now.", newIsVisible);
     }
-    const handleNoAccountYet = () => {
-        // const newShowLoginForm = !showLogInForm
-        // setShowLoginForm(newShowLoginForm)
-    } 
+    
+
     return (
         <>
             <PurpleButton onClick={handleClick} text={text}/>
             {accountFormIsVisible && 
                 <div className='fixed top-0 left-0 w-screen h-screen z-40 flex items-center justify-center'>
-                    <div id="account-container" className='z-42 flex items-center justify-center p-4 w-full h-4/5 2xs:h-9/10'>
-                        <div id='infos-container'
-                            className='flex flex-col justify-between p-6 2xs:p-4 bg-background-purple-lining w-full h-full sm:h-4/5 sm:w-4/5 rounded-4xl relative'>
-                                {!noAccountYet && <LoginForm />}
-                                {noAccountYet && <SignupForm />}
-                                {didForgotPassword && <ForgotPasswordForm />}
-                        </div>
+                    <div id='form-container' className='z-42 flex flex-col w-9/10 h-8/10 sm:h-8/10 sm:w-4/5 md:w-8/10 lg:h-4/5 lg:w-7/10 xl:w-6/10 rounded-lg bg-background-secondary sm:flex-row'>
+                        {currentForm}
                     </div>
-                    <div onClick={handleClick} className="fixed top-0 left-0 w-screen h-screen bg-background-tertiary opacity-75 z-41"></div>
+                    <div id='overlay' onClick={handleClick} className="z-41 fixed top-0 left-0 w-screen h-screen bg-background-tertiary opacity-75"></div>
                 </div>
             }
         </>

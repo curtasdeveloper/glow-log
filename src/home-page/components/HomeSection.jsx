@@ -16,7 +16,7 @@ function HomeSection() {
                     TrackPeak is your all-in-one fitness tracker. Plan your sessions, stay consistent, and hit every milestone with precision tools built for personal growth.
                     </p>
                 </div>
-                <div className="button-container flex justify-center">
+                <div id='get-started-container' className="flex justify-center">
                     <AccountForm text="Get Started."/>
                 </div>
             </main>
