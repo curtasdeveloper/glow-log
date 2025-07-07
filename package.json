@@ -1,9 +1,9 @@
 {
-  "name": "glow-log",
+  "name": "trackpeak",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://curtasdeveloper.github.io/glow-log/",
+  "homepage": "https://curtasdeveloper.github.io/trackpeak/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
