@@ -97,8 +97,6 @@ function ForgotPasswordForm() {
 function AccountForm({text}) {
 
     const [ accountFormIsVisible, setAccountFormIsVisible ] = useState(false)
-    const [ currentForm, setCurrentForm ] = useState(<LoginForm />)
-    // const [ haveNoAccount, setAccountFormIsVisiblesetHaveNoAccount ] = useState(false)
     const handleClick = () => {
         const newIsVisible = !accountFormIsVisible
         setAccountFormIsVisible(newIsVisible)
@@ -112,7 +110,7 @@ function AccountForm({text}) {
             {accountFormIsVisible && 
                 <div className='fixed top-0 left-0 w-screen h-screen z-40 flex items-center justify-center'>
                     <div id='form-container' className='z-42 flex flex-col w-9/10 h-8/10 sm:h-8/10 sm:w-4/5 md:w-8/10 lg:h-4/5 lg:w-7/10 xl:w-6/10 rounded-lg bg-background-secondary sm:flex-row'>
-                        {currentForm}
+                        <LoginForm/>
                     </div>
                     <div id='overlay' onClick={handleClick} className="z-41 fixed top-0 left-0 w-screen h-screen bg-background-tertiary opacity-75"></div>
                 </div>
