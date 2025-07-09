@@ -1,5 +1,6 @@
 import '../../style/index.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import PurpleButton from '../reusable-component/button/PurpleButton'
 import { PiHandshakeThin } from "react-icons/pi";
 import { PiHandWavingThin } from "react-icons/pi";
@@ -8,6 +9,14 @@ import { PiEyeThin } from "react-icons/pi";
 import { PiEyeSlashThin } from "react-icons/pi";
 
 function LoginForm() {
+    const navigate = useNavigate();
+
+    const handleSignUpClick = () => {
+        navigate('/sign-up')
+    }
+    const handleForgotPasswordClick = () => {
+        navigate('/forgot-password')
+    }
     const [ showPassword, setShowPassword ] = useState(false)
     const handleShowPasswordBtn = () => {
         const newShowPassword = !showPassword;
@@ -51,7 +60,7 @@ function LoginForm() {
                             className='font-title sm:text-[12px] md:text-sm'
                             >Remember Me</label>
                         </div>
-                        <button className='font-title sm:text-[12px] md:text-sm hover:underline' type='button'>Forgot Password?</button>
+                        <button onClick={handleForgotPasswordClick} className='font-title sm:text-[12px] md:text-sm hover:underline' type='button'>Forgot Password?</button>
                     </div>
                     <div className='flex justify-center'>
                         <button className='font-title text-md px-6 py-1 rounded-sm bg-background-secondary duration-100 hover:scale-95 active:scale-90' type="submit">Log In</button>
@@ -61,7 +70,7 @@ function LoginForm() {
                 </form>
                 <footer className='flex items-center justify-center gap-1'>
                     <p className='font-title text-sm opacity-70'>Don't Have An Account?</p>
-                    <button className='font-title text-sm hover:underline' type='button'>Register Now.</button>
+                    <button onClick={handleSignUpClick} className='font-title text-sm hover:underline' type='button'>Register Now.</button>
                 </footer>
             </div>
         </>
