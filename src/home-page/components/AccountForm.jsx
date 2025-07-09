@@ -3,12 +3,30 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import PurpleButton from '../reusable-component/button/PurpleButton'
 import { PiHandshakeThin } from "react-icons/pi";
-import { PiHandWavingThin } from "react-icons/pi";
-import { PiLockKeyThin } from "react-icons/pi";
 import { PiEyeThin } from "react-icons/pi";
 import { PiEyeSlashThin } from "react-icons/pi";
+import toast from 'react-hot-toast';
 
 function LoginForm() {
+    const [ formData, setFormData ] = useState({
+        email: '',
+        password: '',
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+
+        // Check if the email and password are valid
+    }
+    const validateFormData = () => {
+        if (!formData.email.trim()) {
+            toast.error("Please enter your username.")
+        }
+        if (!formData.password.trim()) {
+            toast.error("Please enter your password.")
+        }
+    }
     const navigate = useNavigate();
 
     const handleSignUpClick = () => {
@@ -33,14 +51,14 @@ function LoginForm() {
                 <header className='hidden sm:block md:pt-10'>
                     <h1 className='font-heading text-xl lg:text-2xl font-semibold text-center opacity-75'>Time to Train Smarter</h1>
                 </header>
-                <form action="" className='w-full px-4 md:px-6 flex flex-col gap-2'>
+                <form action="" onSubmit={handleSubmit} className='w-full px-4 md:px-6 flex flex-col gap-2'>
                     <hr className='opacity-45 w-3/4 m-auto'/>
                     <br />
                     <div id="login-email-container" className='flex flex-col'>
                         <label htmlFor="login-email"
                             className='font-title text-md'
                             >Email</label>
-                        <input required type="email" name="login-email" id="login-email" placeholder='johndoe@example.com'
+                        <input value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required type="email" name="login-email" id="login-email" placeholder='johndoe@example.com'
                             className='bg-background-secondary p-2 rounded-md font-title text-sm outline-none font-thin'/>
                     </div>
                     <div id="login-password-container" className='flex flex-col'>
@@ -48,7 +66,7 @@ function LoginForm() {
                             className='font-title text-md'
                             >Password</label>
                         <div className='flex relative'>
-                            <input required type={showPassword ? "text": "password"} name="login-password" id="login-password" placeholder='xxxxxxxx'
+                            <input value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} required type={showPassword ? "text": "password"} name="login-password" id="login-password" placeholder='xxxxxxxx'
                                 className='bg-background-secondary p-2 rounded-md font-title text-sm outline-none w-full font-thin'/>
                             <button onClick={handleShowPasswordBtn} className='absolute top-3 right-2 outline-none' type="button">{showPassword ? <PiEyeThin /> : <PiEyeSlashThin />}</button>
                         </div>
@@ -63,7 +81,7 @@ function LoginForm() {
                         <button onClick={handleForgotPasswordClick} className='font-title sm:text-[12px] md:text-sm hover:underline' type='button'>Forgot Password?</button>
                     </div>
                     <div className='flex justify-center'>
-                        <button className='font-title text-md px-6 py-1 rounded-sm bg-background-secondary duration-100 hover:scale-95 active:scale-90' type="submit">Log In</button>
+                        <button onClick={validateFormData} className='font-title text-md px-6 py-2 rounded-sm bg-background-secondary duration-100 hover:scale-95 active:scale-90' type="submit">Log In</button>
                     </div>
                     <br />
                     <hr className='opacity-45 w-3/4 m-auto'/>
@@ -75,32 +93,6 @@ function LoginForm() {
             </div>
         </>
     ) 
-}
-
-function SignupForm() {
-    return (
-        <>
-            <div id='infos-container' className='text-foreground-white flex flex-col items-center justify-center sm:rounded-l-lg rounded-t-lg bg-background-purple-lining sm:bg-background-secondary w-full h-1/3 sm:w-1/2 sm:h-full'>
-                <PiHandWavingThin className='size-8 sm:size-9 lg:size-10'/>
-                <h1 className='2xs:max-xs:text-[16px] text-center font-bold font-title lg:text-xl'>Start Your Fitness Journey with TrackPeak</h1>
-                <p className='text-center 2xs:max-xs:text-[12px] font-light font-heading text-sm w-3/4 2xs:max-xs:w-full sm:w-4/5'>Join TrackPeak for smarter tracking and stronger results with tools that keep you consistent, focused, and climbing toward your peak.</p>
-            </div>
-            <div id='inputs-container' className='bg-background-purple-lining rounded-b-lg sm:rounded-lg w-full h-2/3 sm:w-1/2 sm:h-full'></div>
-        </>
-    )
-}
-
-function ForgotPasswordForm() {
-    return (
-        <>
-            <div id='infos-container' className='text-foreground-white flex flex-col items-center justify-center sm:rounded-l-lg rounded-t-lg bg-background-purple-lining sm:bg-background-secondary w-full h-1/3 sm:w-1/2 sm:h-full'>
-                <PiLockKeyThin className='size-8 sm:size-9 lg:size-10'/>
-                <h1 className='text-center font-bold font-title lg:text-xl'>Reset and Restart Strong</h1>
-                <p className='text-center font-light font-heading text-sm w-3/4 2xs:max-xs:w-full sm:w-4/5'>Because missing a password shouldn’t stop your progress.</p>
-            </div>
-            <div id='inputs-container' className='bg-background-purple-lining rounded-b-lg sm:rounded-lg w-full h-2/3 sm:w-1/2 sm:h-full'></div>
-        </>
-    )
 }
 
 function AccountForm({text}) {

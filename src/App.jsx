@@ -7,6 +7,7 @@ import NotFoundPage from './pages/NotFoundPage.jsx'
 function App() {
 
   return (
+    
     <Router basename="/trackpeak">
       <Routes>
         <Route path="/" element={<HomePage />} />

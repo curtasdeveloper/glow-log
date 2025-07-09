@@ -16,7 +16,7 @@ function Header() {
             <header className='z-15 fixed top-0 flex items-center justify-between bg-background-black w-full h-16 md:h-18 md:text-xl lg:h-22 px-2 sm:px-4 md:px-12'>
                 <div id="logo-container" className='flex items-center'>
                     <img src={Logo} alt="L" className='size-12 lg:size-14'/>
-                    <a href="#">
+                    <a href="#text-content-container">
                         <span className='font-title font-bold text-lg text-foreground-white'>Track<span className='text-primary-purple'>Peak</span></span>
                     </a>
                 </div>
