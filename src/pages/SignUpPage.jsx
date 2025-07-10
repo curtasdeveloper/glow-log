@@ -70,6 +70,10 @@ function SignUpPage() {
                 toast.error("Username is required.");
                 return false;
             }
+            if (!formData.backupEmail.trim() ) {
+                toast.error("Backup Email is required.");
+                return false;
+            }
             // Optionally validate email format
             if (formData.backupEmail && !/\S+@\S+\.\S+/.test(formData.backupEmail)) {
                 toast.error("Enter a valid backup email.");

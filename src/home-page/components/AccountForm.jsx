@@ -101,7 +101,6 @@ function AccountForm({text}) {
     const handleClick = () => {
         const newIsVisible = !accountFormIsVisible
         setAccountFormIsVisible(newIsVisible)
-        console.log("Should be visible now.", newIsVisible);
     }
     
 

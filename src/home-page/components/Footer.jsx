@@ -9,7 +9,7 @@ function Footer() {
                         <li className='font-title'><a href="">Home</a></li>
                         <li className='font-title'><a href="#about-container">About</a></li>
                         <li className='font-title'><a href="#features-container">Features</a></li>
-                        <li className='font-title'><a onClick={() => window.scrollTo(0, 0) } href="">Get Started</a></li>
+                        <li className='font-title'><a onClick={ () => window.scrollTo({top: 0, behavior: "smooth"}) } href="">Get Started</a></li>
                     </ul>
                     <ul className='flex gap-4 justify-center'>
                         <li className='font-title text-primary-purple opacity-75' ><a href="https://github.com/curtasdeveloper" target="_blank" >Github Account</a></li>
